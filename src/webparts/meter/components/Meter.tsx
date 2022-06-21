@@ -2,7 +2,15 @@ import * as React from "react";
 import styles from "./Meter.module.scss";
 import { IMeterProps } from "./IMeterProps";
 import { escape } from "@microsoft/sp-lodash-subset";
-export default class Meter extends React.Component<IMeterProps, {}> {
+
+type MyState={
+  name:string;
+}
+export default class Meter extends React.Component<IMeterProps, MyState> {
+  state: MyState = {
+    name: 'AP',
+  };
+
   public render(): React.ReactElement<IMeterProps> {
     const {
       description,
@@ -11,6 +19,7 @@ export default class Meter extends React.Component<IMeterProps, {}> {
       hasTeamsContext,
       userDisplayName,
     } = this.props;
+
 
     return (
       <section
@@ -34,6 +43,8 @@ export default class Meter extends React.Component<IMeterProps, {}> {
         </div>
         <div style={{ textAlign: "center" }}>
           <h3>Welcome to SharePoint Framework! Aalekh Bhai</h3>
+          <input type="input" value={this.state.name} placeholder="Enter your Name" onChange={(e)=>this.setState({ name: e.currentTarget.value })}/><br/>
+          <p>{this.state.name}</p>
           <p>Click the button below to upload</p>
           <button>UPLOAD</button>
           {/* <h4>Learn more about SPFx development:</h4>
