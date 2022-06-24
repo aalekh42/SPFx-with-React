@@ -19,7 +19,7 @@ export default class Meter extends React.Component<IMeterProps, MyState> {
       isDarkTheme,
       environmentMessage,
       hasTeamsContext,
-      userDisplayName,
+      userDisplayName,test,test1,test2,test3
     } = this.props;
 
 
@@ -41,7 +41,12 @@ export default class Meter extends React.Component<IMeterProps, MyState> {
           <div>{environmentMessage}</div>
           <div>
             Web part property value: <strong>{escape(description)}</strong>
+            <p>Multiline Text:{escape(test)}</p>
+            <p>checkbox:{test1}</p>
+            <p>Dropdown:{escape(test2)}</p>
+            <p>Toggle:{test3}</p>
           </div>
+          
         </div>
         <div style={{ textAlign: "center" }}>
           <h3>Welcome to SharePoint Framework! Aalekh Bhai</h3>

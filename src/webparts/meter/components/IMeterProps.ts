@@ -4,4 +4,8 @@ export interface IMeterProps {
   environmentMessage: string;
   hasTeamsContext: boolean;
   userDisplayName: string;
+  test: string;
+  test1: boolean;
+  test2: string;
+  test3: boolean;
 }
