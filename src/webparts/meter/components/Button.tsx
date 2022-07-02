@@ -1,13 +1,14 @@
 import * as React from 'react';
+
 interface Props{
     btnName:string;
 }
-const Button:React.FC<Props>=({btnName})=>{
+const UploadButton:React.FC<Props>=({btnName})=>{
     return(
         <>
-            <button className='btn btn-success'>{btnName}</button>
+            <button className='btn btn-primary'>{btnName}</button>
         </>
     )
 }
 
-export default Button;
+export default UploadButton;

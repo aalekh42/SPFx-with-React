@@ -7,7 +7,7 @@ const Hello :React.FC<Props>=({name}) => {
   return (
     <>
         <div className='home-container fluid-container'>
-            <div className="row">
+            <div className="col-12">
                     Hello <strong>{name},</strong>Click below btn for upload
                 </div>
         </div>

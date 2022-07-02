@@ -10,7 +10,7 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as strings from 'MeterWebPartStrings';
 import Meter from './components/Meter';
 import { IMeterProps } from './components/IMeterProps';

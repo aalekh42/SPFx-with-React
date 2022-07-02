@@ -29,7 +29,7 @@
       "officeFabricIconFontName": "Page",
       "properties": {
         "description": "HelloWorld",
-        "test": "Multi-line text field",
+        "test": "Giving default value-OK",
         "test1": true,
         "test2": "2",
         "test3": true
