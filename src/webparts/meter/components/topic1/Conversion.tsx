@@ -1,15 +1,62 @@
-import * as React from 'react';
+import * as React from "react";
 
-const Conversion:React.FC=()=>{
-    return(
-            <div className="fluid-container conversion-container">
-                <div className="row">
-                    <div className="col-12">
-                        WELCOME TO EXCEL?CSV CONVERSION
-                    </div>
-                </div>
-            </div>
-    )
-}
+const Conversion: React.FC = () => {
+  const [excelData,setExcelData]= React.useState('');
+  const [excelFile,setExcelFile]= React.useState(null);
+  const [excelFileError,setExcelFileError]= React.useState('');
+
+  //handleFile
+  const fileType=['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
+  const handleFile=(e)=>{
+    let selectedFile=e.target.files[0];
+    if(selectedFile){
+        //console.log(selectedFile.type); //to get fileType 
+        if(fileType.includes(selectedFile.type)){
+            let reader=new FileReader();
+            reader.readAsArrayBuffer(selectedFile);
+            reader.onload=(e)=>{
+                setExcelFileError(null);
+                setExcelFile(e.target.result)
+            }
+        }else{
+           setExcelFileError("Please select Excel file only");
+           setExcelFile(null);
+        }
+    }else{
+        console.log("Please select one file")
+    }
+  }
+
+  return (
+    <div className="fluid-container conversion-container">
+      <div className="row">
+        <div className="col-12">
+          <h4 style={{ fontWeight: "400", justifyContent: "center" }}>
+            WELCOME TO EXCEL/CSV CONVERSION
+          </h4>
+        </div>
+
+        <div
+          className="col-12 form"
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <h6>Upload Excel Files</h6>
+
+          <form>
+            <input
+              type="file"
+              required
+              style={{ border: "2px solid green" }}
+              onChange={(e)=>handleFile(e)}
+            ></input>
+            <button type="submit" className="btn btn-primary">
+              UPLOAD
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Conversion;
