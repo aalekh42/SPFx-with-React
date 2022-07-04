@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as XLSX from 'xlsx';
+import ListData from "./ListData";
 
 const Conversion: React.FC = () => {
   const [excelData,setExcelData]= React.useState(null);
@@ -70,7 +71,10 @@ const Conversion: React.FC = () => {
             </button>
           </form>
         </div>
-      </div>
+      </div> {/* End of upload btn */}
+
+      {/* Start of displaying excel data in list/table */}
+      <ListData excelData={excelData}/>
     </div>
   );
 };
