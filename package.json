@@ -19,6 +19,7 @@
     "react": "16.13.1",
     "react-bootstrap": "^2.4.0",
     "react-dom": "16.13.1",
+    "react-json-to-table": "^0.1.7",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",

@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as XLSX from 'xlsx';
 import ListData from "./ListData";
+import ListData2 from "./ListData2";
 
 const Conversion: React.FC = () => {
   const [excelData,setExcelData]= React.useState(null);
@@ -66,7 +67,7 @@ const Conversion: React.FC = () => {
               onChange={(e)=>handleFile(e)}
             ></input>
             {excelFileError}
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-danger">
               UPLOAD
             </button>
           </form>
@@ -74,7 +75,8 @@ const Conversion: React.FC = () => {
       </div> {/* End of upload btn */}
 
       {/* Start of displaying excel data in list/table */}
-      <ListData excelData={excelData}/>
+      {/* <ListData excelData={excelData}/> */}
+      <ListData2 excelData={excelData}/>
     </div>
   );
 };
